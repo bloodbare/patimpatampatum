@@ -1,168 +1,189 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ca">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Patim, patam... patum | Un pas més</title>
-  <style>
-    :root {
-      --primary: #1f4e79;
-      --bg: #f8fafc;
-      --card-bg: #ffffff;
-      --text: #2d3748;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patim, patam... patum | Un pas més</title>
+    <style>
+      :root {
+        --primary: #1f4e79;
+        --bg: #f8fafc;
+        --card-bg: #ffffff;
+        --text: #2d3748;
+      }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: system-ui, -apple-system, sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      padding: 20px;
-    }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family:
+          system-ui,
+          -apple-system,
+          sans-serif;
+        background-color: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        padding: 20px;
+      }
 
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-    }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
 
-    header {
-      text-align: center;
-      padding: 40px 20px;
-      background: var(--card-bg);
-      border-radius: 12px;
-      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
-      margin-bottom: 30px;
-    }
+      header {
+        text-align: center;
+        padding: 40px 20px;
+        background: var(--card-bg);
+        border-radius: 12px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        margin-bottom: 30px;
+      }
 
-    header h1 {
-      font-size: 2.2rem;
-      color: var(--primary);
-      margin-bottom: 5px;
-    }
+      header h1 {
+        font-size: 2.2rem;
+        color: var(--primary);
+        margin-bottom: 5px;
+      }
 
-    header h2 {
-      font-size: 1.4rem;
-      font-weight: 600;
-      color: #4a5568;
-    }
+      header h2 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #4a5568;
+      }
 
-    header p {
-      font-size: 0.95rem;
-      color: #718096;
-      margin-top: 8px;
-    }
+      header p {
+        font-size: 0.95rem;
+        color: #718096;
+        margin-top: 8px;
+      }
 
-    section {
-      background: var(--card-bg);
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
-      margin-bottom: 30px;
-    }
+      section {
+        background: var(--card-bg);
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        margin-bottom: 30px;
+      }
 
-    h3 {
-      font-size: 1.3rem;
-      color: var(--primary);
-      margin-bottom: 15px;
-      border-bottom: 2px solid #edf2f7;
-      padding-bottom: 8px;
-    }
+      h3 {
+        font-size: 1.3rem;
+        color: var(--primary);
+        margin-bottom: 15px;
+        border-bottom: 2px solid #edf2f7;
+        padding-bottom: 8px;
+      }
 
-    /* Reproductor d'àudio */
-    audio {
-      width: 100%;
-      margin-top: 10px;
-    }
+      /* Reproductor d'àudio */
+      audio {
+        width: 100%;
+        margin-top: 10px;
+      }
 
-    /* Galeria de 3 fotos */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 15px;
-    }
+      /* Galeria de 3 fotos */
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 15px;
+      }
 
-    .gallery img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 8px;
-      display: block;
-    }
+      .gallery img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 8px;
+        display: block;
+      }
 
-    /* Partitura */
-    .sheet-music img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      border: 1px solid #e2e8f0;
-    }
+      /* Partitura */
+      .sheet-music img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        border: 1px solid #e2e8f0;
+      }
 
-    .download-btn {
-      display: inline-block;
-      margin-top: 15px;
-      background-color: var(--primary);
-      color: #fff;
-      padding: 10px 18px;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: 500;
-      font-size: 0.9rem;
-    }
+      .download-btn {
+        display: inline-block;
+        margin-top: 15px;
+        background-color: var(--primary);
+        color: #fff;
+        padding: 10px 18px;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: 500;
+        font-size: 0.9rem;
+      }
 
-    .download-btn:hover {
-      opacity: 0.9;
-    }
+      .download-btn:hover {
+        opacity: 0.9;
+      }
 
-    footer {
-      text-align: center;
-      font-size: 0.85rem;
-      color: #a0aec0;
-      margin-top: 40px;
-    }
-  </style>
-</head>
-<body>
+      footer {
+        text-align: center;
+        font-size: 0.85rem;
+        color: #a0aec0;
+        margin-top: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Un pas més</h1>
+        <h2>Patim, patam... patum</h2>
+        <p>Cançó creada per a l'Escola Oms i de Prat (Manresa)</p>
+      </header>
 
-  <div class="container">
-    <header>
-      <h1>Un pas més</h1>
-      <h2>Patim, patam... patum</h2>
-      <p>Cançó creada per a l'Escola Oms i de Prat (Manresa)</p>
-    </header>
+      <section>
+        <h3>Descripció</h3>
+        <p>
+          Patim, patam... patum neix d'un grup de pares i mares de l'Escola Oms
+          i de Prat (Manresa) que portem uns anys tocant junts i compartint la
+          nostra passió per la música amb l'escola amb espectacles de nadales,
+          cançons infantils i contes. Aquest cop ens hem animat a esciure una
+          lletra i enregistrar una cançó pensada per tots els nens i nenes de
+          l'escola. Esperem que us agradi.
+        </p>
+        <p>
+          "Un pas més" és una cançó que celebra la perseverança i la superació.
+          Amb un ritme contagiós i lletres inspiradores, aquesta peça convida a
+          tots a seguir endavant, malgrat els obstacles.
+        </p>
+      </section>
 
-    <!-- Àudio -->
-    <section>
-      <h3>Escolta la cançó</h3>
-      <audio controls>
-        <source src="un-pas-mes.mp3" type="audio/mpeg">
-        El teu navegador no suporta l'element d'àudio.
-      </audio>
-    </section>
+      <!-- Àudio -->
+      <section>
+        <h3>Escolta la cançó</h3>
+        El dia 31 d'Agost surt a les plataformes digitals.
+      </section>
 
-    <!-- Partitura -->
-    <section class="sheet-music">
-      <h3>Partitura</h3>
-      <img src="partitura.jpg" alt="Partitura de la cançó Un pas més">
-      <div>
-        <a href="partitura.pdf" class="download-btn" download>Descarregar partitura en PDF</a>
-      </div>
-    </section>
+      <!-- Partitura -->
+      <section class="sheet-music">
+        <h3>Partitura</h3>
+        <img src="partitura.jpg" alt="Partitura de la cançó Un pas més" />
+        <div>
+          <a href="Un pas més 23-08-Voice.pdf" class="download-btn" download
+            >Descarregar partitura en PDF</a
+          >
+        </div>
+      </section>
 
-    <!-- Galeria de 3 fotos -->
-    <section>
-      <h3>El grup</h3>
-      <div class="gallery">
-        <img src="foto1.jpg" alt="Patim, patam... patum - Foto 1">
-        <img src="foto2.jpg" alt="Patim, patam... patum - Foto 2">
-        <img src="foto3.jpg" alt="Patim, patam... patum - Foto 3">
-      </div>
-    </section>
+      <!-- Galeria de 3 fotos -->
+      <section>
+        <h3>Fotos</h3>
 
-    <footer>
-      <p>© Patim, patam... patum · Escola Oms i de Prat</p>
-    </footer>
-  </div>
+        <div class="gallery">
+          <img src="foto1.jpeg" alt="Patim, patam... patum - Foto 1" />
+          <img src="foto2.jpeg" alt="Patim, patam... patum - Foto 2" />
+        </div>
+      </section>
 
-</body>
+      <footer>
+        <p>© Patim, patam... patum</p>
+      </footer>
+    </div>
+  </body>
 </html>
